@@ -1,0 +1,36 @@
+#newcontainer{
+	padding-top: 45px;
+	width: 1423px;
+    height: 675px;
+
+}
+.gameplay{
+    background: url(/img/ring.jpg);
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: 1423px 675px;	
+}
+.startgame{
+	background: url(/img/battleofthebands.jpg); 
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: 1423px 675px;
+}
+
+.mole{
+	background-color: transparent;
+	height: 155px;
+	width: 155px;
+	float: left;
+	position: relative;
+}
+ 
+.hideme{
+	display: none;
+}
+
+.addme{
+/*	background: url(/img/blink182rabbit.png) no-repeat center;
+*/}
