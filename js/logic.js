@@ -1,10 +1,9 @@
 $(document).ready(function() {
 		// var randomTime = (Math.floor(Math.random() * 2000) + 800);
 		var selectedMole, test, score = 0, randomTime, game, count = 6, moleImage;
-		var picture = ["url(/img/blink182face.png) no-repeat center", "url(/img/blink182rabbit.png) no-repeat center",
-		"url(/img/Ramones.png) no-repeat center","url(/img/mxpx.png) no-repeat center",
-		"url(/img/goodcharlotte.png) no-repeat center", "url(/img/misfits.png) no-repeat center",
-		"url(/img/linkinpark.png) no-repeat center"];
+		var picture = [ 'img/blink182face.png', 'img/blink182rabbit.png',
+		'img/Ramones.png','img/mxpx.png','img/goodcharlotte.png',
+		 'img/misfits.png', 'img/linkinpark.png' ];
 
 		
 
@@ -15,29 +14,29 @@ $(document).ready(function() {
 		
 
 		function pickMole(){
-			var randomNumber = Math.floor(Math.random() * 38);
-			var randomPicture = Math.floor(Math.random() * 8);
+			var randomNumber = Math.floor(Math.random() * 36);
+			var randomPicture = Math.floor(Math.random() * 7);
 			var moles = $('#newcontainer').children();
 			moleImage = picture[randomPicture];
 			selectedMole = $(moles[randomNumber]);
-			$('.addme').css('background', moleImage);
 			selectedMole.addClass('addme');
+			$('.addme').css('background', "url('/" + moleImage + "') no-repeat center");
 		
 			setTimeout(function(){
 				selectedMole.removeClass('addme');
+				$(moles).css('background', 'none');
 			}, 800);
 			
 	        $(selectedMole).click(function(event) {
 	        	score++;
-	        	console.log(score);
+	        	// console.log(score);
 				$('.mole').off();
 			});
-			randomTime = (Math.floor(Math.random() * 2000) + 800);
+			randomTime = (Math.floor(Math.random() * 3000) + 805);
 
 			setInterval(endGame, 30000);	
 			game = setTimeout(pickMole, randomTime);
-			// var currentTime = randomTime;
-			// console.log(randomTime);	
+			var currentTime = randomTime;
 		}
 
 		function timer(){
@@ -56,7 +55,7 @@ $(document).ready(function() {
 		}
 		
 		function starter(){
-			console.log('ive been clicked');
+			// console.log('ive been clicked');
 			$('#change').addClass('hideme');
 			$('.mole').removeClass('hideme');
 			$('.timer').text('');
